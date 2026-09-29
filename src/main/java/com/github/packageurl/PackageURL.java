@@ -395,12 +395,12 @@ public final class PackageURL implements Serializable {
     }
 
     private static String validateName(final String type, final String value) throws MalformedPackageURLException {
-    if (value.isEmpty()) {
-        throw new MalformedPackageURLException("The PackageURL name specified is invalid");
-    }
+        if (value.isEmpty()) {
+            throw new MalformedPackageURLException("The PackageURL name specified is invalid");
+        }
 
-    return PackageNamePolicies.forType(type).normalize(value);
-}
+        return PackageNamePolicies.forType(type).normalize(value);
+    }
 
     private static @Nullable String validateVersion(final String type, final @Nullable String value) {
         if (value == null) {
@@ -553,9 +553,11 @@ public final class PackageURL implements Serializable {
             }
         }
     }
+
     private static String canonicalizeQualifierKey(String key) {
         return StringUtil.toLowerCase(key);
     }
+
     private static @Nullable Map<String, String> parseQualifiers(final @Nullable Map<String, String> qualifiers)
             throws MalformedPackageURLException {
         if (qualifiers == null || qualifiers.isEmpty()) {
@@ -601,6 +603,7 @@ public final class PackageURL implements Serializable {
             throw new MalformedPackageURLException(e);
         }
     }
+
     private static String[] parsePath(final String path, final boolean isSubpath) {
         return Arrays.stream(path.split("/"))
                 .filter(segment -> !segment.isEmpty() && !(isSubpath && (".".equals(segment) || "..".equals(segment))))
