@@ -33,4 +33,4 @@ I would keep both changes.
 
 # Repository
 * URL: https://github.com/nguyentienzm-ctrl/cs4928-lab2
-* c6afb3627f6a8d1502d2e73ae9ed9854b312a20f 
+* c6afb3627f6a8d1502d2e73ae9ed9854b312a20f
